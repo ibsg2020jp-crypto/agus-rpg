@@ -18,6 +18,25 @@
       </div>
     </section>
 
+    <section id="townScreen" class="screen">
+      <div class="panel town-panel">
+        <h2>帰り道の村</h2>
+        <p id="townText">村は静まり返っている。助けた人たちの声だけが少しずつ戻ってくる。</p>
+        <div class="town-status">
+          <div>救助済み <strong id="townRescued">0</strong>/30</div>
+          <div>道具 <strong id="townItems">0</strong></div>
+          <div>収集品 <strong id="townCollections">0</strong></div>
+        </div>
+        <div class="town-buttons">
+          <button id="townNextBtn">次の救助へ</button>
+          <button id="townGatherBtn">採集モード</button>
+          <button id="townEquipBtn">装備モード</button>
+          <button id="townReplayBtn">森から再挑戦</button>
+        </div>
+        <p id="modeText" class="mode-text">採集・装備は土台実装中。クリア報酬アイテムが増えると使い道が広がる。</p>
+      </div>
+    </section>
+
     <section id="gameScreen" class="screen">
       <header class="hud">
         <div>Stage <span id="stageNo">1</span>/<span id="stageTotal">6</span></div>
@@ -26,7 +45,7 @@
       </header>
       <div class="stage-meta">
         <strong id="stageName">ステージ名</strong>
-        <span>このステージ: <span id="rescuedCount">0</span>/<span id="goalCount">1</span></span>
+        <span>この場面: <span id="rescuedCount">0</span>/<span id="goalCount">1</span></span>
       </div>
       <canvas id="game" width="384" height="384" aria-label="Agu's RPG game canvas"></canvas>
       <div class="message" id="message">村人を助けよう。</div>
@@ -40,7 +59,7 @@
       <div class="panel">
         <h2 id="clearTitle">ステージクリア！</h2>
         <p id="clearText"></p>
-        <button id="nextBtn">次のステージへ</button>
+        <button id="nextBtn">村へ戻る</button>
       </div>
     </section>
 
@@ -48,12 +67,7 @@
       <div class="panel ending-panel">
         <h2>End Roll</h2>
         <div class="credits">
-          <p>Agu's RPG</p>
-          <p>主人公 Agu</p>
-          <p>恋人 ami</p>
-          <p>救助された村人たち 30人</p>
-          <p>そして、まだ見つかっていない思い出たち</p>
-          <p>Thank you for playing</p>
+          <p>Agu's RPG</p><p>主人公 Agu</p><p>恋人 ami</p><p>救助された村人たち 30人</p><p>そして、まだ見つかっていない思い出たち</p><p>Thank you for playing</p>
         </div>
         <button id="endingBackBtn">タイトルへ</button>
       </div>
@@ -64,10 +78,7 @@
     <div class="dialogue-box">
       <div class="portrait" id="dialoguePortrait"></div>
       <div class="dialogue-main">
-        <div class="dialogue-head">
-          <strong id="dialogueSpeaker">語り手</strong>
-          <span id="dialogueRole"></span>
-        </div>
+        <div class="dialogue-head"><strong id="dialogueSpeaker">語り手</strong><span id="dialogueRole"></span></div>
         <p id="dialogueDesign" class="dialogue-design"></p>
         <p id="dialogueText" class="dialogue-text"></p>
         <button id="dialogueNextBtn">次へ</button>
