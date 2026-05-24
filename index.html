@@ -12,7 +12,7 @@
       <div class="panel title-panel">
         <h1>Agu's RPG</h1>
         <p>朝起きると、村のみんなが消えていた。</p>
-        <p>タップで移動。近づいてタップで救助。敵に遭遇したら時間が巻き戻る。</p>
+        <p>タップで移動。装備を選んで対象をタップ。近づいて救助。</p>
         <p class="subcopy">森、廃村、洞窟、山、遺跡、廃城を巡り、30人の村人と恋人amiを救う。</p>
         <button id="startBtn">目を覚ます</button>
       </div>
@@ -29,11 +29,13 @@
         </div>
         <div class="town-buttons">
           <button id="townNextBtn">次の救助へ</button>
-          <button id="townGatherBtn">採集モード</button>
+          <button id="townGatherBtn">村のはずれ</button>
           <button id="townEquipBtn">装備モード</button>
+          <button id="villagerBookBtn">住民図鑑</button>
+          <button id="collectionBookBtn">コレクション図鑑</button>
           <button id="townReplayBtn">森から再挑戦</button>
         </div>
-        <p id="modeText" class="mode-text">採集・装備は土台実装中。クリア報酬アイテムが増えると使い道が広がる。</p>
+        <p id="modeText" class="mode-text">装備や図鑑を確認してから出発できる。</p>
       </div>
     </section>
 
@@ -48,10 +50,24 @@
         <span>この場面: <span id="rescuedCount">0</span>/<span id="goalCount">1</span></span>
       </div>
       <canvas id="game" width="384" height="384" aria-label="Agu's RPG game canvas"></canvas>
+      <div id="equipmentBar" class="equipment-bar">
+        <button data-tool="hand">手</button>
+        <button data-tool="lantern">ランタン</button>
+        <button data-tool="hook">フック</button>
+        <button data-tool="bomb">爆弾</button>
+      </div>
       <div class="message" id="message">村人を助けよう。</div>
       <div class="controls">
         <button id="interactBtn">調べる / 助ける</button>
         <button id="resetBtn">やり直す</button>
+      </div>
+    </section>
+
+    <section id="bookScreen" class="screen">
+      <div class="panel book-panel">
+        <h2 id="bookTitle">図鑑</h2>
+        <div id="bookList" class="book-list"></div>
+        <button id="bookBackBtn">村へ戻る</button>
       </div>
     </section>
 
@@ -66,9 +82,7 @@
     <section id="endingScreen" class="screen">
       <div class="panel ending-panel">
         <h2>End Roll</h2>
-        <div class="credits">
-          <p>Agu's RPG</p><p>主人公 Agu</p><p>恋人 ami</p><p>救助された村人たち 30人</p><p>そして、まだ見つかっていない思い出たち</p><p>Thank you for playing</p>
-        </div>
+        <div class="credits"><p>Agu's RPG</p><p>主人公 Agu</p><p>恋人 ami</p><p>救助された村人たち 30人</p><p>そして、まだ見つかっていない思い出たち</p><p>Thank you for playing</p></div>
         <button id="endingBackBtn">タイトルへ</button>
       </div>
     </section>
