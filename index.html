@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Agu's RPG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <section id="titleScreen" class="screen active">
+      <div class="panel title-panel">
+        <h1>Agu's RPG</h1>
+        <p>タップで移動。近づいてタップで助ける。敵に触れると時間が巻き戻る。</p>
+        <button id="startBtn">冒険を始める</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <header class="hud">
+        <div>Stage <span id="stageNo">1</span></div>
+        <div>救助 <span id="rescuedCount">0</span>/<span id="goalCount">3</span></div>
+        <div>巻戻 <span id="rewindCount">0</span></div>
+      </header>
+      <canvas id="game" width="320" height="320" aria-label="Agu's RPG game canvas"></canvas>
+      <div class="message" id="message">町の人を全員助けよう。</div>
+      <div class="controls">
+        <button id="interactBtn">調べる / 助ける</button>
+        <button id="resetBtn">やり直す</button>
+      </div>
+    </section>
+
+    <section id="clearScreen" class="screen">
+      <div class="panel">
+        <h2>ステージクリア！</h2>
+        <p id="clearText"></p>
+        <button id="nextBtn">次のステージへ</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
