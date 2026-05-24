@@ -11,18 +11,23 @@
     <section id="titleScreen" class="screen active">
       <div class="panel title-panel">
         <h1>Agu's RPG</h1>
-        <p>タップで移動。近づいてタップで助ける。敵に触れると時間が巻き戻る。</p>
+        <p>タップで移動。近づいてタップで救助。敵に遭遇したら時間が巻き戻る。</p>
+        <p class="subcopy">目標：町の人を累計30人救う。ステージはあとから追加できる。</p>
         <button id="startBtn">冒険を始める</button>
       </div>
     </section>
 
     <section id="gameScreen" class="screen">
       <header class="hud">
-        <div>Stage <span id="stageNo">1</span></div>
-        <div>救助 <span id="rescuedCount">0</span>/<span id="goalCount">3</span></div>
+        <div>Stage <span id="stageNo">1</span>/<span id="stageTotal">1</span></div>
+        <div>累計救助 <span id="totalRescuedCount">0</span>/<span id="campaignGoalCount">30</span></div>
         <div>巻戻 <span id="rewindCount">0</span></div>
       </header>
-      <canvas id="game" width="320" height="320" aria-label="Agu's RPG game canvas"></canvas>
+      <div class="stage-meta">
+        <strong id="stageName">ステージ名</strong>
+        <span>このステージ: <span id="rescuedCount">0</span>/<span id="goalCount">3</span></span>
+      </div>
+      <canvas id="game" width="384" height="384" aria-label="Agu's RPG game canvas"></canvas>
       <div class="message" id="message">町の人を全員助けよう。</div>
       <div class="controls">
         <button id="interactBtn">調べる / 助ける</button>
@@ -32,12 +37,13 @@
 
     <section id="clearScreen" class="screen">
       <div class="panel">
-        <h2>ステージクリア！</h2>
+        <h2 id="clearTitle">ステージクリア！</h2>
         <p id="clearText"></p>
         <button id="nextBtn">次のステージへ</button>
       </div>
     </section>
   </main>
+  <script src="levels.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
