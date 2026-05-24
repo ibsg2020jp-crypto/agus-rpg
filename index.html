@@ -11,24 +11,25 @@
     <section id="titleScreen" class="screen active">
       <div class="panel title-panel">
         <h1>Agu's RPG</h1>
+        <p>朝起きると、村のみんなが消えていた。</p>
         <p>タップで移動。近づいてタップで救助。敵に遭遇したら時間が巻き戻る。</p>
-        <p class="subcopy">目標：町の人を累計30人救う。ステージはあとから追加できる。</p>
-        <button id="startBtn">冒険を始める</button>
+        <p class="subcopy">森、廃村、洞窟、山、遺跡、廃城を巡り、30人の村人と恋人amiを救う。</p>
+        <button id="startBtn">目を覚ます</button>
       </div>
     </section>
 
     <section id="gameScreen" class="screen">
       <header class="hud">
-        <div>Stage <span id="stageNo">1</span>/<span id="stageTotal">1</span></div>
+        <div>Stage <span id="stageNo">1</span>/<span id="stageTotal">6</span></div>
         <div>累計救助 <span id="totalRescuedCount">0</span>/<span id="campaignGoalCount">30</span></div>
         <div>巻戻 <span id="rewindCount">0</span></div>
       </header>
       <div class="stage-meta">
         <strong id="stageName">ステージ名</strong>
-        <span>このステージ: <span id="rescuedCount">0</span>/<span id="goalCount">3</span></span>
+        <span>このステージ: <span id="rescuedCount">0</span>/<span id="goalCount">1</span></span>
       </div>
       <canvas id="game" width="384" height="384" aria-label="Agu's RPG game canvas"></canvas>
-      <div class="message" id="message">町の人を全員助けよう。</div>
+      <div class="message" id="message">村人を助けよう。</div>
       <div class="controls">
         <button id="interactBtn">調べる / 助ける</button>
         <button id="resetBtn">やり直す</button>
@@ -42,7 +43,40 @@
         <button id="nextBtn">次のステージへ</button>
       </div>
     </section>
+
+    <section id="endingScreen" class="screen">
+      <div class="panel ending-panel">
+        <h2>End Roll</h2>
+        <div class="credits">
+          <p>Agu's RPG</p>
+          <p>主人公 Agu</p>
+          <p>恋人 ami</p>
+          <p>救助された村人たち 30人</p>
+          <p>そして、まだ見つかっていない思い出たち</p>
+          <p>Thank you for playing</p>
+        </div>
+        <button id="endingBackBtn">タイトルへ</button>
+      </div>
+    </section>
   </main>
+
+  <section id="dialogueOverlay" class="dialogue-overlay hidden" aria-live="polite">
+    <div class="dialogue-box">
+      <div class="portrait" id="dialoguePortrait"></div>
+      <div class="dialogue-main">
+        <div class="dialogue-head">
+          <strong id="dialogueSpeaker">語り手</strong>
+          <span id="dialogueRole"></span>
+        </div>
+        <p id="dialogueDesign" class="dialogue-design"></p>
+        <p id="dialogueText" class="dialogue-text"></p>
+        <button id="dialogueNextBtn">次へ</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="characters.js"></script>
+  <script src="items.js"></script>
   <script src="levels.js"></script>
   <script src="game.js"></script>
 </body>
